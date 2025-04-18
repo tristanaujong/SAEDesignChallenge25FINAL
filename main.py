@@ -3,7 +3,7 @@ import requests # needed to connect to external apis
 
 app = Flask(__name__)
 
-base_url = "https://cataas.com/"
+base_url = "https://api.mercedes-benz.com/configurator/v2"
 
 @app.route("/")
 def index():
