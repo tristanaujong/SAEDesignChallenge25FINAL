@@ -68,6 +68,10 @@
         <h2>Your car:</h2>
         <img src="{{ curr_car['vehicle']['EXT020']['url'] }}" alt="car_picture" style="width: 500px;">
     {% endif %}
+
+    {% if error %}
+        <h2>Error: {{ error }}</h2>
+    {% endif %}
     
 </body>
 </html>
