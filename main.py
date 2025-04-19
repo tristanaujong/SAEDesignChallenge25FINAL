@@ -61,8 +61,21 @@ def get_model_info():
         classes = []
     return render_template("index.html", models=models, classes=classes)
 
-# @app.route("/models/<model_id>")
-# def show_model():
+@app.route("/models/<model_id>/configurations/initial")
+def show_model():
+
+    
+
+    # get current model image
+    model_id = request.args.get("modelId")
+    curr_model_url = f"{base_url}/models/{model_id}/configurations/initial"
+    curr_car_response = requests.get(curr_model_url, headers=headers)
+
+    if curr_car_response.status_code == 200:
+        curr_car_data = curr_car_response.json()
+        curr_car = curr_car_data
+    else:
+        curr_car = []
     
 
 if __name__ == "__main__":
