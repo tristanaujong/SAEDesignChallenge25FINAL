@@ -8,6 +8,27 @@
 <body>
     <h1>Mercedes-Benz API</h1>
 
+    <!-- <form action="/models" method="get"> 
+        <select name="classId">
+            {% for class in classes %}
+                <option value="{{ class.classId }}">{{ class.className }}</option>
+            {% endfor %}
+        </select>
+         <button type = "submit">Submit</button> -->
+    </form> 
+
+    <h2>Classes</h2>
+        
+
+    <!-- <form action="/" method="get"> 
+        <select name="classId">
+            {% for model in models %}
+                <option value="{{ model.classId }}">{{ model.name }}</option>
+            {% endfor %}
+        </select>
+        <button type = "submit">Submit</button>
+    </form> -->
+
     {% if classes %}
         <form action="/models" method="get"> 
             <select name="classId">
@@ -19,13 +40,27 @@
         </form>
     {% endif %}
 
-    {% if models %}
+    <!-- {% if models %}
         <h2>Models</h2>
+        
         <ul>
             {% for model in models %}
                 <li>{{ model.name }}</li>
             {% endfor %}
         </ul>
+    {% endif %} -->
+
+    {% if models %}
+        <h2>Models</h2>
+        
+        <form action="/" method="get"> 
+            <select name="classId">
+                {% for model in models %}
+                    <option value="{{ model.classId }}">{{ model.name }}</option>
+                {% endfor %}
+            </select>
+            <button type = "submit">Submit</button>
+        </form>
     {% endif %}
     
 </body>
